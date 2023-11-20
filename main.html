@@ -1,16 +1,71 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            font-size: 16px;
+            margin: 0 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .stop {
+            background-color: #e74c3c;
+        }
+    </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <h1>Audio Player</h1>
 
+    <div id="buttons">
+        <!-- Replace 'sound1.mp3', 'sound2.mp3', etc., with your actual sound file names -->
+        <button class="btn" onclick="playAudio('sound1.mp3')">Sound 1</button>
+        <button class="btn" onclick="playAudio('sound2.mp3')">Sound 2</button>
+        <button class="btn" onclick="playAudio('sound3.mp3')">Sound 3</button>
+        <!-- Add more buttons as needed -->
+
+        <!-- Stop Button -->
+        <button class="btn stop" onclick="stopAudio()">Stop</button>
+    </div>
+
+    <script>
+        let audio;
+
+        function playAudio(sound) {
+            // Stop any currently playing audio
+            stopAudio();
+
+            // Create a new audio element
+            audio = new Audio(`sounds/${sound}`);
+            audio.play();
+        }
+
+        function stopAudio() {
+            // Check if audio is currently playing
+            if (audio) {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
+    </script>
 </body>
-
 </html>
