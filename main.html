@@ -61,7 +61,7 @@
 
         function stopAudio() {
             // Check if audio is currently playing
-            if (audio) {
+            if (audio && !audio.paused) {
                 audio.pause();
                 audio.currentTime = 0;
             }
