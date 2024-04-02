@@ -1,1 +1,20 @@
 /*  your css code here. If applicable */
+* {
+	background-color: #a164df;
+}
+
+#container {
+	display: flex;
+	
+}
+
+.btn, .stop {
+	    font-size: 16px;
+        margin: 0 10px;
+        padding: 10px 20px;
+	    cursor: pointer;
+        background-color: #663399;
+        color: #e5f0fc;
+        border: none;
+            /* border-radius: 5px; */
+        }
